@@ -1,0 +1,15 @@
+.outerWrapper{
+    width: 100dvw;
+    min-height: 100dvh;
+    padding: 3rem 0.5rem 0;
+    background-color: var(--darksand);
+    overflow: hidden;
+}
+
+.innerWrapper{
+    padding: 1em var(--wrapperPadding) 1em;
+    margin: 0 auto;
+    width: 100%;
+    background-color: var(--sanddune);
+    border-radius: 1em;
+}

@@ -1,0 +1,66 @@
+.card{
+    position: relative;
+    --nailPadding: 0.8rem;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    background-color: var(--sanddune);
+    display: inline-block;
+    text-decoration: none;
+    color: var(--darksand);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    width: min-content;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.nail{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 200rem;
+    background-color: var(--darksand);
+    position: absolute;
+}
+
+.nail:nth-of-type(1){
+    top: var(--nailPadding);
+    left: var(--nailPadding);
+}
+
+.nail:nth-of-type(2){
+    top: var(--nailPadding);
+    right: var(--nailPadding);
+}
+
+.nail:nth-of-type(3){
+    bottom: var(--nailPadding);
+    left: var(--nailPadding);
+}
+
+.nail:nth-of-type(4){
+    bottom: var(--nailPadding);
+    right: var(--nailPadding);
+}
+
+.content p{
+    width: 34ch;
+    font-size: 1.1em;
+    line-height: 1.4;
+    font-weight: 500;
+    text-wrap: wrap;
+}
+
+@media only screen and (max-width: 640px){
+    .cardNail{
+        width: 2vw;
+        height: 2vw;
+    }
+    .card{
+        padding: 6vw;
+    }
+  }

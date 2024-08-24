@@ -1,0 +1,10 @@
+.scroller {
+	display: flex;
+	flex-direction: row;
+	white-space: nowrap;
+	overflow-x: auto;
+	height: 100dvh;
+	background-color: var(--darksand);
+	color: var(--sanddune);
+	position: relative;
+}

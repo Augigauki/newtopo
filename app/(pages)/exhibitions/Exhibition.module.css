@@ -1,0 +1,24 @@
+.pagestyles{
+    color: var(--sanddune);
+    background-color: var(--darksand);
+}
+
+.exhibwrapper{
+    display: flex;
+    min-height: 100%;
+    margin-right: 12em;
+}
+
+.introwrapper{
+    margin: var(--wrapperPadding) var(--padhor);
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    scroll-margin: var(--padhor);
+}
+
+.scrollerWrapper{
+    background-color: var(--darksand);
+    color: var(--sanddune);
+    overflow-x: auto;
+}

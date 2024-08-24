@@ -1,0 +1,34 @@
+.exhibitionsWrapper{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.listWrapper{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 50%;
+}
+
+
+
+.gridWrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    
+}
+
+
+
+/* .listWrapper a:not(:last-child)::after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: var(--darksand);
+    position: absolute;
+    bottom: -0.33em;
+    left: 0;
+} */

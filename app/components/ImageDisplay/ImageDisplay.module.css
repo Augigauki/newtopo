@@ -1,0 +1,86 @@
+.imageContainer {
+	flex: 0 0 auto;
+	margin-right: 2em;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	gap: 2em;
+}
+
+.image {
+	max-height: 100dvh;
+	min-height: 100dvh;
+	width: 100%;
+	object-fit: contain;
+}
+
+.index {
+	font-family: 'MD IO 0.7';
+	line-height: 1;
+	display: inline;
+	font-weight: 600;
+}
+
+.card {
+	margin-top: 6vh;
+}
+
+.info {
+	margin-right: 12em;
+}
+
+.info h3 {
+	font-size: 1.25em;
+	font-weight: 700;
+}
+
+.info p,
+.info a {
+	font-family: 'Clash Grotesk';
+	font-weight: 400;
+	display: inline;
+	font-size: 1.8em;
+	text-wrap: nowrap;
+}
+
+.info a {
+	text-decoration: underline;
+	color: inherit;
+}
+
+.endwrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.jumpLinkWrapper{
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  --nailPadding: 0.8rem;
+  background-color: var(--sanddune);
+	color: var(--darksand);
+	border-radius: 0.5rem;
+	padding: 0.75rem 0.8rem;
+}
+
+.jumpLink {
+  text-decoration: none;
+	color: inherit;
+  font-weight: 500;
+  line-height: 1;
+  position: relative;
+}
+
+.nail{
+  width: 1rem;
+  height: 1rem;
+  border-radius: 200rem;
+  background-color: var(--darksand);
+}

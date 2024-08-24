@@ -1,0 +1,64 @@
+.exhibLink {
+	color: inherit;
+	text-decoration: none;
+	width: 100%;
+	padding: 1em 0;
+	position: relative; 
+}
+
+.exhibLink:not(:last-child)::after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background-color: var(--darksand);
+	position: absolute;
+	bottom: -0.1em;
+	left: 0;
+}
+
+.exhibItem {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1em;
+	font-family: 'MD IO 0.7';
+	padding: 0;
+	color: inherit;
+	text-decoration: none;
+    width: min-content;
+}
+
+.bgImgWrapper {
+	position: relative;
+	height: 20em;
+	width: 100%;
+	border-radius: 0.5em;
+	overflow: hidden;
+	z-index: 1; 
+}
+
+.title {
+	width: min-content;
+	text-wrap: nowrap;
+    letter-spacing: -1px;
+}
+
+/* .title::after {
+	content: '';
+	width: 10px;
+	background-color: var(--darksand);
+	left: 50%;
+	position: absolute;
+	height: 5em;
+	top: -30%;
+	z-index: 2;
+} */
+
+.bgOverlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #22222280;
+	z-index: 2; /* Set .bgOverlay z-index lower than .title */
+}

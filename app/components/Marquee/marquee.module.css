@@ -1,0 +1,42 @@
+.marquee {
+	--gap: 2rem;
+	display: flex;
+	overflow: hidden;
+	user-select: none;
+	height: 100%;
+	gap: var(--gap);
+}
+
+.marqueeContent {
+	flex-shrink: 0;
+	display: flex;
+	justify-content: space-around;
+	min-width: 100%;
+	gap: var(--gap);
+	
+}
+
+.marqueeElement {
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+	width: calc(460rem / 16);
+	border-radius: 2rem;
+}
+
+.marquee1{
+  animation: scroll 100s linear infinite;
+}
+
+.marquee2 {
+	animation: scroll 100s linear infinite;
+}
+
+@keyframes scroll {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(calc(-100% - var(--gap)));
+	}
+}

@@ -1,95 +1,73 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Image from 'next/image';
+import styles from './page.module.css';
+import { getHeroPhotos } from './data/getPhotos';
+import FrontpageImage from './components/FrontpageImage';
+import Marquee from './components/Marquee/Marquee';
 
-export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+const Home = async () => {
+	const heroImgFetch = await getHeroPhotos();
+	const heroImgs = await heroImgFetch.docs;
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+	return (
+		<main className={styles.pageWrapper}>
+			<div className={styles.heroWrapper}>
+				<div className={styles.heroImageContainer}>
+					<FrontpageImage
+						photos={heroImgs}
+						path={process.env.R2_MEDIA_URL!}
+					/>
+				</div>
+				<div className={styles.bgOverlay} />
+				<div className={styles.heroContent}>
+					<h1 className={styles.heroTitle}>New Topographics</h1>
+					<div className={styles.subheadingsWrapper}>
+						<p className={styles.subheading}>Man-made</p>
+						<p className={styles.subheading}>Landscape</p>
+						<p className={styles.subheading}>Photography</p>
+					</div>
+				</div>
+			</div>
+			<div className={styles.container}>
+				<h2>A museum for New Topographics photography</h2>
+				{/* <p>This is a museum focused on new topographics photography, a style focused on man-made landscape photography.</p> */}
+				<div className={styles.columns}>
+					<p>
+						This is a museum focused on new topographics photography, a style focused on man-made landscape
+						photography. It started out as a school project in a graphic design course in October 2019.
+						Photographs are grouped into different exhibitions, based on which country the photograph is
+						from. All photographs showcased have been submitted to the site by the photographers themselves.
+						This is a passion project, and something I tinker with beside my job and other hobbies.
+						Submissions to the museum are open, additions not guaranteed. Please do not redistribute or
+						share any images from this website without getting permission from the photographer of the
+						photograph you want to share. New Topographics is a photography movement which has its name from
+						an exhibition curated by William Jenkins at the International Museum of Photography in New York
+						City in 1975. The exhibition, named{' '}
+						<em>New Topographics: Photographs of a Man-Altered Landscape</em>, featured landscape
+						photography where the main subject of the photo is man-made scenery. This aesthetic has since
+						been emulated by photographers around the world.
+					</p>
+				</div>
+				<div className={styles.marquee}>
+					<div className={styles.marqueeOverlay} />
+					<Marquee>
+						{heroImgs.map((img: any) => (
+							<div
+								className={styles.marqueeImgWrapper}
+								key={img.id}
+							>
+								<Image
+									src={img.url}
+									alt={img.altText}
+									fill={true}
+									className={styles.marqueeImg}
+								/>
+							</div>
+						))}
+					</Marquee>
+				</div>
+			</div>
+		</main>
+	);
+};
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
-}
+export default Home;
