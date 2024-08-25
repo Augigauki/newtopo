@@ -6,10 +6,7 @@ import Link from 'next/link';
 
 const ImageDisplay = ({ index, image, path, length }: { index: number; image: any; path: string; length: number }) => {
 	return (
-		<div
-			className={styles.imageContainer}
-			
-		>
+		<div className={styles.imageContainer}>
 			<div className={`${styles.card} ${styles.index}`}>
 				<Card>{index + 1}</Card>
 			</div>
@@ -48,31 +45,32 @@ const ImageDisplay = ({ index, image, path, length }: { index: number; image: an
 					</Card>
 				</div>
 				{index + 1 < length ? (
-					<div className={styles.jumpLinkWrapper}>
-						<div className={styles.nail}/>
-						
-						<Link
-							href={`#${index + 2}`}
-							onClick={(e) => {
-								e.preventDefault();
-								document.getElementById(`${index + 2}`)?.scrollIntoView({ behavior: 'smooth' });
-							}}
-							className={styles.jumpLink}
-						>
-							Next Image
-						</Link>
-						<div className={styles.nail}/>
-					</div>
+					<Link
+						href={`#${index + 2}`}
+						onClick={(e) => {
+							e.preventDefault();
+							document.getElementById(`${index + 2}`)?.scrollIntoView({ behavior: 'smooth' });
+						}}
+						className={styles.jumpLinkWrapper}
+					>
+						<div className={styles.nail} />
+
+						<p className={styles.jumpLink}>Next Image</p>
+						<div className={styles.nail} />
+					</Link>
 				) : (
 					<Link
 						href={`#${index + 2}`}
 						onClick={(e) => {
 							e.preventDefault();
-							document.getElementById('start')?.scrollIntoView({ block: 'start' ,behavior: 'smooth' });
+							document.getElementById('start')?.scrollIntoView({ block: 'start', behavior: 'smooth' });
 						}}
-						className={styles.jumpLink}
+						className={styles.jumpLinkWrapper}
 					>
-						Back to start
+						<div className={styles.nail} />
+
+						<p className={styles.jumpLink}>Back to start</p>
+						<div className={styles.nail} />
 					</Link>
 				)}
 			</div>

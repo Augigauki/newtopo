@@ -19,3 +19,12 @@ export const getExhibitionBasedOnSlug = async(slug: string) => {
     }
     return await res.json();
 }
+
+export const getExhibitionBasedOnId = async(id: string) => {
+    const res = await fetch(`${endpoint}/exhibitions/${id}`, options);
+    if(!res.ok){
+        console.error(`Can't fetch exhibitions based on id: ${res.status}`);
+        throw new Error(`Can't fetch exhibitions based on id: ${res.status}`)
+    }
+    return await res.json();
+}

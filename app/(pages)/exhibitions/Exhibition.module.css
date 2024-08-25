@@ -22,3 +22,7 @@
     color: var(--sanddune);
     overflow-x: auto;
 }
+
+.introwrapper p {
+    font-variation-settings: 'wght' 460;
+}

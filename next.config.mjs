@@ -9,6 +9,10 @@ const nextConfig = {
             {
                 protocol: 'https',
                 hostname: 'media.newtopographic.art'
+            },
+            {
+                protocol: 'https',
+                hostname: 'cms.augustgaukstad.com'
             }
         ]
     }

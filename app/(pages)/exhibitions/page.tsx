@@ -1,7 +1,6 @@
 import PageWrapper from '@/app/components/PageWrapper/PageWrapper';
 import styles from './ExhibitionsPage.module.css';
 import { getExhibitions } from '@/app/data/getExhibitions';
-import Link from 'next/link';
 import { getPhotographers } from '@/app/data/getPhotographers';
 import ExhibitionsList from '@/app/components/ExhibitionsList/ExhibitionsList';
 import PhotographersList from '@/app/components/ExhibitionsList/PhotographersList';

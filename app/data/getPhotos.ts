@@ -21,7 +21,7 @@ export const getPhoto = async(id: string) => {
 }
 
 export const getHeroPhotos = async() =>  {
-    const res = await fetch(`${endpoint}/photographs?where[hero][equals]=true&depth=0`, options);
+    const res = await fetch(`${endpoint}/photographs?where[hero][equals]=true&depth=1`, options);
     if(!res.ok){
         console.error(`can't fetch hero photos`);
         throw new Error(`can't fetch hero images: ${res.status}`);

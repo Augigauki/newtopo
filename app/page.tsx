@@ -7,14 +7,12 @@ import Marquee from './components/Marquee/Marquee';
 const Home = async () => {
 	const heroImgFetch = await getHeroPhotos();
 	const heroImgs = await heroImgFetch.docs;
-
 	return (
 		<main className={styles.pageWrapper}>
 			<div className={styles.heroWrapper}>
 				<div className={styles.heroImageContainer}>
 					<FrontpageImage
 						photos={heroImgs}
-						path={process.env.R2_MEDIA_URL!}
 					/>
 				</div>
 				<div className={styles.bgOverlay} />
@@ -50,19 +48,21 @@ const Home = async () => {
 				<div className={styles.marquee}>
 					<div className={styles.marqueeOverlay} />
 					<Marquee>
-						{heroImgs.map((img: any) => (
-							<div
-								className={styles.marqueeImgWrapper}
-								key={img.id}
-							>
-								<Image
-									src={img.url}
-									alt={img.altText}
-									fill={true}
-									className={styles.marqueeImg}
-								/>
-							</div>
-						))}
+						{heroImgs.map((img: any) => {
+							return (
+								<div
+									className={styles.marqueeImgWrapper}
+									key={img.id}
+								>
+									<Image
+										src={img.url}
+										alt={img.altText}
+										fill={true}
+										className={styles.marqueeImg}
+									/>
+								</div>
+							);
+						})}
 					</Marquee>
 				</div>
 			</div>

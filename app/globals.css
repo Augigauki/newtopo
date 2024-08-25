@@ -25,6 +25,22 @@
 	font-display: swap;
 }
 
+@font-face {
+	font-family: 'Tanker';
+	src: url('/fonts/Tanker-Regular.woff2') format('woff2'), url('/fonts/Tanker-Regular.woff') format('woff'), url('/fonts/Tanker-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Clash Grotesk';
+	src: url('/fonts/ClashGrotesk-Variable.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
 :root {
 	--sanddune: #e8e2da;
 	--white: #fff;
@@ -46,6 +62,8 @@ body {
 	font-variant-numeric: slashed-zero;
     line-height: 1.4;
 	font-size: 1rem;
+	overscroll-behavior-y: none;
+	font-variation-settings: 'wght' 460;
 }
 
 h1 {
@@ -62,6 +80,7 @@ h5,
 h6 {
 	font-family: 'MD IO 0.7';
 	font-weight: 600;
+	font-variation-settings: 'wght' 600;
 	text-transform: uppercase;
   line-height: 1;
   padding-top: 0.1em;
@@ -74,6 +93,7 @@ h2 {
 h3 {
 	font-size: 1.8em;
 	font-weight: 500;
+	font-variation-settings: 'wght' 500;
   
 }
 

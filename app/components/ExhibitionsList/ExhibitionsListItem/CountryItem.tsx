@@ -1,25 +1,34 @@
+'use client';
 import Link from 'next/link';
 import styles from '../ExhibitionsList.module.css';
 import BgImage from './BgImage';
 import { getPhotosForExhibition } from '@/app/data/getPhotos';
+import { motion } from 'framer-motion';
+import { exhibItemVariants } from '@/util/framermotion/variants';
 
-const CountryItem = async ({ country }: { country: any }) => {
-	const photosFetch = await getPhotosForExhibition(country.id);
-	const photos = await photosFetch.docs;
+const CountryItem = ({ country }: { country: any }) => {
 	return (
 		<div
-			
 			className={styles.exhibLink}
 			style={{ borderRight: '2px solid var(--darksand)', paddingRight: '1rem' }}
 		>
-			<Link href={`/exhibitions/country/${country.slug}`} className={styles.exhibItem}>
-				{/* <div className={styles.bgImgWrapper}>
-					<BgImage photos={photos} />
-					<div className={styles.bgOverlay} />
+			<motion.div
+				variants={exhibItemVariants}
+				initial='static'
+				whileHover={'hover'}
+			>
+				<Link
+					href={`/exhibitions/country/${country.slug}`}
+					className={styles.exhibItem}
+				>
+					{/* <div className={styles.bgImgWrapper}>
+							<BgImage photos={photos} />
+							<div className={styles.bgOverlay} />
+							<h3 className={styles.title}>{country.title}</h3>
+						</div> */}
 					<h3 className={styles.title}>{country.title}</h3>
-				</div> */}
-				<h3 className={styles.title}>{country.title}</h3>
-			</Link>
+				</Link>
+			</motion.div>
 		</div>
 	);
 };

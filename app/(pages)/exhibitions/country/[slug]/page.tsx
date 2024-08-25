@@ -3,7 +3,6 @@ import styles from '../../Exhibition.module.css';
 import Card from '@/app/components/Card/Card';
 import ImageScroller from '@/app/components/ImageScroller/ImageScroller';
 import { getPhotosForExhibition } from '@/app/data/getPhotos';
-import Link from 'next/link';
 
 const Exhibition = async ({ params }: { params: { slug: string } }) => {
 	const exhibFetch = await getExhibitionBasedOnSlug(params.slug);

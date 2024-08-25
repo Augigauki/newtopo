@@ -31,7 +31,7 @@
 }
 
 .info h3 {
-	font-size: 1.25em;
+	font-size: 1.25rem;
 	font-weight: 700;
 }
 
@@ -40,7 +40,7 @@
 	font-family: 'Clash Grotesk';
 	font-weight: 400;
 	display: inline;
-	font-size: 1.8em;
+	font-size: 1.8rem;
 	text-wrap: nowrap;
 }
 
@@ -49,38 +49,40 @@
 	color: inherit;
 }
 
-.endwrapper{
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-items: flex-start;
+.endwrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	align-items: flex-start;
 }
 
-.jumpLinkWrapper{
-  position: relative;
-  display: flex;
-  gap: 1rem;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  --nailPadding: 0.8rem;
-  background-color: var(--sanddune);
+.jumpLinkWrapper {
+	position: relative;
+	display: flex;
+	gap: 1rem;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	--nailPadding: 0.8rem;
+	background-color: var(--sanddune);
 	color: var(--darksand);
 	border-radius: 0.5rem;
 	padding: 0.75rem 0.8rem;
+	text-decoration: none;
 }
 
 .jumpLink {
-  text-decoration: none;
+	text-decoration: none;
 	color: inherit;
-  font-weight: 500;
-  line-height: 1;
-  position: relative;
+	font-weight: 500;
+	font-variation-settings: 'wght' 500;
+	line-height: 1;
+	position: relative;
 }
 
-.nail{
-  width: 1rem;
-  height: 1rem;
-  border-radius: 200rem;
-  background-color: var(--darksand);
+.nail {
+	width: 1rem;
+	height: 1rem;
+	border-radius: 200rem;
+	background-color: var(--darksand);
 }

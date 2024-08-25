@@ -14,7 +14,7 @@
 .navItem{
     color: var(--sanddune);
     text-decoration: none;
-
+    font-variation-settings: 'wght' 480;
 }
 
 .navItem.active{

@@ -21,3 +21,14 @@ export const getPhotographerBasedOnSlug = async(slug: string) => {
     }
     return await res.json();
 }
+
+export const getPhotographerBasedOnId = async(id: string) => {
+    console.log(id);
+    const res = await fetch(`${endpoint}/photographers/${id}`, options);
+    if(!res.ok){
+        const msg = `Photographer from ID fetch not working. ${res.status}`
+        console.error(msg);
+        throw new Error(msg);
+    }
+    return await res.json();
+}
