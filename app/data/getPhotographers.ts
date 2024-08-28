@@ -3,7 +3,7 @@
 import { endpoint, options } from "./tokenAndPath"
 
 export const getPhotographers = async() => {
-    const res = await fetch(`${endpoint}/photographers`, options);
+    const res = await fetch(`${endpoint}/photographers?limit=100`, options);
     if(!res.ok){
         const msg = `Photographers fetch not working. ${res.status}`
         console.error(msg);

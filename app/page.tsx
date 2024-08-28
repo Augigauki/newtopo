@@ -45,7 +45,7 @@ const Home = async () => {
 						been emulated by photographers around the world.
 					</p>
 				</div>
-				<div className={styles.marquee}>
+				{/* <div className={styles.marquee}>
 					<div className={styles.marqueeOverlay} />
 					<Marquee>
 						{heroImgs.map((img: any) => {
@@ -64,7 +64,7 @@ const Home = async () => {
 							);
 						})}
 					</Marquee>
-				</div>
+				</div> */}
 			</div>
 		</main>
 	);

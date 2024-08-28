@@ -49,7 +49,7 @@ const ImageDisplay = ({ index, image, path, length }: { index: number; image: an
 						href={`#${index + 2}`}
 						onClick={(e) => {
 							e.preventDefault();
-							document.getElementById(`${index + 2}`)?.scrollIntoView({ behavior: 'smooth' });
+							document.getElementById(`${index + 2}`)?.scrollIntoView({ behavior: 'smooth', inline: 'center' });
 						}}
 						className={styles.jumpLinkWrapper}
 					>

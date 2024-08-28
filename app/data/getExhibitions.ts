@@ -3,7 +3,7 @@
 import { endpoint, options } from "./tokenAndPath"
 
 export const getExhibitions = async() => {
-    const res = await fetch(`${endpoint}/exhibitions?depth=0`, options);
+    const res = await fetch(`${endpoint}/exhibitions?depth=0&limit=100`, options);
     if(!res.ok){
         console.error(`Can't fetch exhibitions: ${res.status}`);
         throw new Error(`Can't fetch exhibitions: ${res.status}`)

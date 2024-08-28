@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import { exhibItemVariants } from '@/util/framermotion/variants';
 
 const CountryItem = ({ country }: { country: any }) => {
+	
 	return (
 		<div
 			className={styles.exhibLink}
