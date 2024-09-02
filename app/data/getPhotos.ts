@@ -47,3 +47,7 @@ export const getPhotosForExhibition = async (id: string) => {
 	}
 	return await res.json();
 };
+
+export const getThumbnailFromExhib = async(id: string) => {
+	const res = await fetch(`${endpoint}/exhibitions/${id}`)
+}

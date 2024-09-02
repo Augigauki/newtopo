@@ -4,12 +4,13 @@ import { getExhibitions } from '@/app/data/getExhibitions';
 import { getPhotographers } from '@/app/data/getPhotographers';
 import ExhibitionsList from '@/app/components/ExhibitionsList/ExhibitionsList';
 import PhotographersList from '@/app/components/ExhibitionsList/PhotographersList';
+import { Exhibition, Photographer } from '@/types/payload-types';
 
 const ExhibitionsPage = async ({}) => {
 	const exhibFetch = await getExhibitions();
-	const exhibitions = await exhibFetch.docs;
+	const exhibitions: Exhibition[] = await exhibFetch.docs;
 	const photographersFetch = await getPhotographers();
-	const photographers = await photographersFetch.docs;
+	const photographers: Photographer[] = await photographersFetch.docs;
 
 	return (
 		<PageWrapper>

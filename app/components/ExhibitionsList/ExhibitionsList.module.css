@@ -1,8 +1,15 @@
+.linkwrapper{
+	text-decoration: none;
+	color: inherit;
+	padding: 1rem 0;
+	display: block;
+}
+
 .exhibLink {
 	color: inherit;
 	text-decoration: none;
 	width: 100%;
-	padding: 1em 0;
+	padding: 0;
 	position: relative; 
 }
 
@@ -40,6 +47,20 @@
 	width: min-content;
 	text-wrap: nowrap;
     letter-spacing: -1px;
+}
+
+.hoverimgwrapper{
+	--size: 20vw;
+	width: var(--size);
+	height: var(--size);
+	top: -1%;
+	left: 5rem;
+	position: fixed;
+	z-index: 10;
+}
+
+.hoverimgwrapper img{
+	object-fit: cover;
 }
 
 /* .title::after {

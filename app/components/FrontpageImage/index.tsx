@@ -3,11 +3,13 @@
 import { useEffect, useState } from 'react';
 import styles from './component.module.css';
 import Image from 'next/image';
+import { Exhibition, Photograph, Photographer } from '@/types/payload-types';
 
 const FrontpageImage = ({ photos }: { photos: any[] }) => {
-	const [heroImg, setHeroImg] = useState<any>(null);
+	const [heroImg, setHeroImg] = useState<Photograph | null>(null);
 	const [loading, setLoading] = useState<boolean>(false);
-
+	const photographer: Photographer = heroImg?.photographer as Photographer;
+	const exhibition: Exhibition = heroImg?.exhibition as Exhibition;
 	useEffect(() => {
 		setHeroImg(photos[Math.floor(Math.random() * photos.length)]);
 		setLoading(false);
@@ -25,8 +27,8 @@ const FrontpageImage = ({ photos }: { photos: any[] }) => {
 		return (
 			<div style={{ position: 'relative', height: '100%', width: '100%' }}>
 				<Image
-					src={heroImg.url}
-					alt={`${heroImg.alt ? heroImg.alt : 'Hero background image'}`}
+					src={heroImg.url ? heroImg.url : ''}
+					alt={`${heroImg.exhibition ? heroImg.exhibition : 'Hero image'}`}
 					fill={true}
 					style={{ objectFit: 'cover' }}
 				/>
@@ -34,13 +36,13 @@ const FrontpageImage = ({ photos }: { photos: any[] }) => {
 					{heroImg.photographer && (
 						<div className={styles.infowrapper}>
 							<p className={styles.label}>Photographer</p>
-							<p className={styles.info}>{heroImg.photographer.name}</p>
+							<p className={styles.info}>{photographer.name}</p>
 						</div>
 					)}
 					{heroImg.exhibition && (
 						<div className={styles.infowrapper}>
 							<p className={styles.label}>Exhibition</p>
-							<p className={styles.info}>{heroImg.exhibition.title}</p>
+							<p className={styles.info}>{exhibition.title}</p>
 						</div>
 					)}
 	
