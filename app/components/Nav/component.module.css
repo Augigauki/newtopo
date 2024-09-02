@@ -1,11 +1,10 @@
 .navWrapper{
     display: inline;
-    width: min-content;
     border-radius: 0 0 1em 0;
     background-color: var(--darksand);
     display: flex;
-    padding: 0.33em var(--padhor);
-    gap: 1.15em;
+    padding: 0.33rem 1.75rem 0.33rem var(--padhor);
+    gap: 1.5rem;
     position: fixed;
     top: 0;
     z-index: 10;

@@ -12,6 +12,7 @@ const Nav = ({}) => {
 	const pages = [
 		{ name: 'Reception', path: '/' },
 		{ name: 'Exhibitions', path: '/exhibitions' },
+		{ name: 'About', path: '/about'}
 	];
 	return (
 		<div className={styles.navWrapper}>

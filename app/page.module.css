@@ -4,16 +4,16 @@
 	min-height: 100vh;
 	width: 100dvw;
 	padding: 3rem 0.5rem 0;
+	padding: 0;
 }
 
 .heroWrapper {
 	position: relative;
 	width: 100%;
-	height: 85dvh;
+	height: 100dvh;
 	padding: 0 var(--wrapperPadding);
 	margin: 0 auto;
 	overflow: hidden;
-	border-radius: 1em;
 }
 
 .heroImageContainer {
@@ -42,15 +42,17 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	padding-top: 2.5rem;
 }
 
 .heroTitle {
-	font-size: 13.9vw;
+	font-size: 14.05vw;
 	line-height: 1;
+	position: relative;
 	white-space: nowrap;
 	user-select: none;
 	text-align: center;
-	margin-left: var(--tankerNegMar);
+	
 }
 
 .subheadingsWrapper {

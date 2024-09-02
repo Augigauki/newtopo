@@ -1,8 +1,6 @@
 'use server';
 
-import { stringify } from 'qs-esm';
 import { endpoint, options } from './tokenAndPath';
-import { addRequestMeta } from 'next/dist/server/request-meta';
 
 export const getPhotos = async () => {
 	const res = await fetch(`${endpoint}/photographs`, options);

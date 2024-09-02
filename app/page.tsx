@@ -25,9 +25,8 @@ const Home = async () => {
 					</div>
 				</div>
 			</div>
-			<div className={styles.container}>
+			{/* <div className={styles.container}>
 				<h2>A museum for New Topographics photography</h2>
-				{/* <p>This is a museum focused on new topographics photography, a style focused on man-made landscape photography.</p> */}
 				<div className={styles.columns}>
 					<p>
 						This is a museum focused on new topographics photography, a style focused on man-made landscape
@@ -45,27 +44,8 @@ const Home = async () => {
 						been emulated by photographers around the world.
 					</p>
 				</div>
-				{/* <div className={styles.marquee}>
-					<div className={styles.marqueeOverlay} />
-					<Marquee>
-						{heroImgs.map((img: any) => {
-							return (
-								<div
-									className={styles.marqueeImgWrapper}
-									key={img.id}
-								>
-									<Image
-										src={img.url}
-										alt={img.altText}
-										fill={true}
-										className={styles.marqueeImg}
-									/>
-								</div>
-							);
-						})}
-					</Marquee>
-				</div> */}
-			</div>
+				
+			</div> */}
 		</main>
 	);
 };

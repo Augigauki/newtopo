@@ -5,14 +5,13 @@ import styles from './component.module.css';
 import Image from 'next/image';
 
 const FrontpageImage = ({ photos }: { photos: any[] }) => {
-	const img = photos[Math.floor(Math.random() * photos.length)]
 	const [heroImg, setHeroImg] = useState<any>(null);
 	const [loading, setLoading] = useState<boolean>(false);
 
 	useEffect(() => {
 		setHeroImg(photos[Math.floor(Math.random() * photos.length)]);
 		setLoading(false);
-	}, [])
+	}, [photos])
 	
 	if(loading){
 		return(
