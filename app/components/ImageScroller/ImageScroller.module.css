@@ -3,6 +3,7 @@
 	flex-direction: row;
 	white-space: nowrap;
 	overflow-x: auto;
+	overflow-y: clip;
 	height: 100dvh;
 	background-color: var(--darksand);
 	color: var(--sanddune);

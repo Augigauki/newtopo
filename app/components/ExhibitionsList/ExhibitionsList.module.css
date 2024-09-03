@@ -53,7 +53,7 @@
 	--size: 20vw;
 	width: var(--size);
 	height: var(--size);
-	top: -1%;
+	top: -10vw;
 	left: 5rem;
 	position: fixed;
 	z-index: 10;
