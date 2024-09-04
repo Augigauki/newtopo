@@ -5,12 +5,17 @@ import { getPhotographers } from '@/app/data/getPhotographers';
 import ExhibitionsList from '@/app/components/ExhibitionsList/ExhibitionsList';
 import PhotographersList from '@/app/components/ExhibitionsList/PhotographersList';
 import { Exhibition, Photographer } from '@/types/payload-types';
+import ExhibBlock from '@/app/components/ExhibBlock/ExhibBlock';
 
 const ExhibitionsPage = async ({}) => {
 	const exhibFetch = await getExhibitions();
 	const exhibitions: Exhibition[] = await exhibFetch.docs;
 	const photographersFetch = await getPhotographers();
 	const photographers: Photographer[] = await photographersFetch.docs;
+
+	return(
+		<ExhibBlock exhibitions={exhibitions} photographers={photographers} />
+	)
 
 	return (
 		<PageWrapper>

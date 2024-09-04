@@ -1,0 +1,12 @@
+.wrapper{
+    padding: 0 calc(100rem/16);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.block{
+    outline: 1px solid red;
+    height: 80vh;
+    width: 100%;
+}
